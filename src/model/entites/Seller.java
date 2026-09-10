@@ -2,7 +2,6 @@ package model.entites;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 
 public class Seller implements Serializable {
 
@@ -14,16 +13,16 @@ public class Seller implements Serializable {
     private Date birthDate;
     private double baseSalary;
 
-    private Departament departament;
+    private Department department;
 
     public Seller() {
 
     }
 
-    public Seller(Departament departament,
+    public Seller(Department department,
                   double baseSalary, Date birthDate, String email,
                   String name, Integer id) {
-        this.departament = departament;
+        this.department = department;
         this.baseSalary = baseSalary;
         this.birthDate = birthDate;
         this.email = email;
@@ -31,12 +30,12 @@ public class Seller implements Serializable {
         this.id = id;
     }
 
-    public Departament getDepartament() {
-        return departament;
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setDepartament(Departament departament) {
-        this.departament = departament;
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public double getBaseSalary() {
@@ -110,7 +109,7 @@ public class Seller implements Serializable {
                 ", email='" + email + '\'' +
                 ", birthDate=" + birthDate +
                 ", baseSalary=" + baseSalary +
-                ", departament=" + departament +
+                ", department=" + department +
                 '}';
     }
 }

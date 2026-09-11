@@ -6,16 +6,41 @@ import model.entites.Department;
 import model.entites.Seller;
 
 import java.util.Date;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import db.DB;
 
 public class Program {
 
     public static void main(String[] args) {
 
-        SellerDao sellerDao = DaoFactory.createSellerDao();
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            conn = DB.getConnection();
 
-        Seller seller = sellerDao.findById(3);
+            st = conn.createStatement();
 
-        System.out.println(seller);
+            rs = st.executeQuery("select * from department");
 
+            while (rs.next()) {
+                System.out.println(rs.getInt("Id") + ", " + rs.getString("Name"));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            DB.closeResultSet(rs);
+            DB.closeConnection();
+        }
     }
 }
+
+
+
+

@@ -3,8 +3,8 @@ package model.dao.impl;
 import db.DB;
 import db.DbException;
 import model.dao.SellerDao;
-import model.entites.Department;
-import model.entites.Seller;
+import model.entities.Department;
+import model.entities.Seller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,7 +1,7 @@
 package model.dao;
 
-import model.entites.Department;
-import model.entites.Seller;
+import model.entities.Department;
+import model.entities.Seller;
 
 import java.util.List;
 

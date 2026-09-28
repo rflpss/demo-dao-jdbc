@@ -2,10 +2,8 @@ package application;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.entites.Department;
-import model.entites.Seller;
-
-import db.DB;
+import model.entities.Department;
+import model.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
